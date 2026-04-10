@@ -1,5 +1,6 @@
 package com.we297.paf.smart_campus_backend.controller;
 
+import com.we297.paf.smart_campus_backend.entity.Comment;
 import com.we297.paf.smart_campus_backend.entity.Ticket;
 import com.we297.paf.smart_campus_backend.service.TicketService;
 import org.springframework.web.bind.annotation.*;
@@ -40,5 +41,15 @@ public class TicketController {
     @DeleteMapping("/{id}")
     public void deleteTicket(@PathVariable Long id) {
         ticketService.deleteTicket(id);
+    }
+
+    @PutMapping("/{id}/assign")
+    public Ticket assignTechnician(@PathVariable Long id, @RequestParam String technician) {
+        return ticketService.assignTechnician(id, technician);
+    }
+
+    @GetMapping("/{id}/comments")
+    public List<Comment> getComments(@PathVariable Long id) {
+        return ticketService.getCommentsForTicket(id);
     }
 }
