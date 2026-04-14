@@ -1,0 +1,8 @@
+package com.we205.paf.smart_campus_backend.entity.enums;
+
+public enum ClaimStatus {
+    PENDING_REVIEW,
+    APPROVED,
+    REJECTED,
+    PAID
+}

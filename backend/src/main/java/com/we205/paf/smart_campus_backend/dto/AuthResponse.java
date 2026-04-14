@@ -1,0 +1,14 @@
+package com.we205.paf.smart_campus_backend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class AuthResponse {
+    private boolean success;
+    private String message;
+    private Object userData;
+}
